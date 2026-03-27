@@ -14,6 +14,7 @@ const http = axios.create({
 async function getVehicleSuggestions(licensePlate) {
   return http.get('/v2/vehicles/suggestions', {
     params: { licensePlate }
+    
   });
 }
 
