@@ -1,0 +1,27 @@
+{
+  "name": "ornikar-nightwatch",
+  "version": "1.0.0",
+  "description": "Nightwatch-style API BDD project for Ornikar insurance API",
+  "private": true,
+  "scripts": {
+    "test:api": "cucumber-js tests/api/features --require tests/api/step-definitions/**/*.js --format json:tests_output/api/cucumber-report.json",
+    "report:api": "node generate-api-report.js",
+    "test:api:report": "npm run test:api && npm run report:api",
+    "test:e2e": "nightwatch --config nightwatch.conf.cjs --env chrome",
+    "test:e2e:headless": "nightwatch --config nightwatch.conf.cjs --env chrome_headless"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "chromedriver": "^146.0.6",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "nightwatch": "^3.11.1",
+    "nightwatch-html-reporter": "^2.0.6"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
